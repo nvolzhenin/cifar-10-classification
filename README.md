@@ -1,7 +1,7 @@
 # cifar-10-classification
 
 ## Project structure
-├── CIFAR                               
+├── CIFAR
 │   ├── model.py
 │   └── trainer.py
 ├── conf
