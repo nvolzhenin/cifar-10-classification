@@ -1,4 +1,34 @@
-# hse_mlops_project
+# cifar-10-classification
+
+## Project structure
+├── CIFAR                               
+│   ├── model.py
+│   └── trainer.py
+├── conf
+│   ├── config.yaml
+│   ├── data
+│   │   └── data.yaml
+│   ├── logging
+│   │   └── logging.yaml
+│   ├── model
+│   │   └── model.yaml
+│   └── training
+│       └── training.yaml
+├── data
+│   ├── infer.dvc
+│   ├── test.dvc
+│   └── train.dvc
+├── infer.py
+├── models
+│   └── model_val_loss=1.13.ckpt
+├── plots
+│   ├── experiment.png
+│   └── graphs.png
+├── poetry.lock
+├── pyproject.toml
+├── README.md
+├── test.py
+└── train.py
 
 Тема проекта - многоклассовая классификация изображений с помощью нейронных сетей
 
