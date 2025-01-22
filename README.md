@@ -2,7 +2,9 @@
 
 ## Project structure
 ├── CIFAR
+
 │   ├── model.py
+
 │   └── trainer.py
 ├── conf
 │   ├── config.yaml
