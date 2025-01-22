@@ -1,34 +1,52 @@
 # cifar-10-classification
 
 ## Project structure
-├── CIFAR                               
-│   ├── model.py
-│   └── trainer.py
+
+├── CIFAR
+│   ├── lightning_logs
+│   ├── model.py
+│   ├── outputs
+│   ├── __pycache__
+│   └── trainer.py
 ├── conf
-│   ├── config.yaml
-│   ├── data
-│   │   └── data.yaml
-│   ├── logging
-│   │   └── logging.yaml
-│   ├── model
-│   │   └── model.yaml
-│   └── training
-│       └── training.yaml
+│   ├── config.yaml
+│   ├── data
+│   ├── logging
+│   ├── model
+│   └── training
 ├── data
-│   ├── infer.dvc
-│   ├── test.dvc
-│   └── train.dvc
+│   ├── infer.dvc
+│   ├── test.dvc
+│   └── train.dvc
 ├── infer.py
+├── lightning_logs
+│   ├── version_0
+│   ├── version_1
+│   ├── version_2
+│   ├── version_3
+│   └── version_4
+├── mlruns
+│   ├── 0
+│   ├── 648735261397303816
+│   └── models
 ├── models
-│   └── model_val_loss=1.13.ckpt
+│   └── model_val_loss=1.13.ckpt
+├── outputs
+│   ├── 2025-01-20
+│   ├── 2025-01-21
+│   └── 2025-01-22
 ├── plots
-│   ├── experiment.png
-│   └── graphs.png
+│   ├── experiment.png
+│   └── graphs.png
 ├── poetry.lock
+├── __pycache__
+│   └── calculator.cpython-311.pyc
 ├── pyproject.toml
 ├── README.md
 ├── test.py
 └── train.py
+
+
 
 Тема проекта - многоклассовая классификация изображений с помощью нейронных сетей
 
