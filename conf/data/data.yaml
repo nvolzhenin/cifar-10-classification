@@ -1,0 +1,7 @@
+train_data_path: ./data/train
+test_data_path: ./data/test
+infer_data_path: ./data/infer
+
+train_dvc: data/train.dvc
+test_dvc: data/test.dvc
+infer_dvc: data/infer.dvc

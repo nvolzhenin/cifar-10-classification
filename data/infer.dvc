@@ -1,0 +1,6 @@
+outs:
+- md5: 2934c73ac0fbfe84e1eac14631a65901.dir
+  size: 2564
+  nfiles: 1
+  hash: md5
+  path: infer

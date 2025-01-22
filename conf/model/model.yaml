@@ -1,0 +1,23 @@
+image_height: 32
+image_width: 32
+
+num_channels: 3
+num_classes: 10
+
+image_mean: [0.5, 0.5, 0.5]
+image_std: [0.5, 0.5, 0.5]
+
+model_path: "./models"
+ckpt: "model_val_loss=1.29.ckpt"
+
+class_dict: {0: 'Airplane', 
+1: 'Automobile',
+2: 'Bird',
+3: 'Cat',
+4: 'Deer',
+5: 'Dog',
+6: 'Frog',
+7: 'Horse',
+8: 'Ship',
+9: 'Truck'}
+

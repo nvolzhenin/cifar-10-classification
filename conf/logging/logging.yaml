@@ -1,0 +1,3 @@
+experiment_name: cifar_10
+run_name: BasicNet
+tracking_uri: http://127.0.0.1:8080
