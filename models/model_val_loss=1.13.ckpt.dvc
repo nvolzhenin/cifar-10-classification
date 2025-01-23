@@ -1,0 +1,5 @@
+outs:
+- md5: 183de51309263136106a94a68d47a855
+  size: 1198619
+  hash: md5
+  path: model_val_loss=1.13.ckpt

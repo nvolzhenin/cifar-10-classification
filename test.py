@@ -15,6 +15,13 @@ from CIFAR.trainer import ImageClassifier
 
 @hydra.main(version_base=None, config_path="./conf", config_name="config")
 def main(config: DictConfig) -> None:
+
+    ckpt_name = config["model"]["ckpt"]
+    models_path = config["model"]["model_path"]
+
+    # pull model from dvc local storage
+    sp.run(["dvc", "pull", f"{models_path}/{ckpt_name}.dvc"], check=True)
+
     transformer = transforms.Compose(
         [
             transforms.ToTensor(),
@@ -27,7 +34,7 @@ def main(config: DictConfig) -> None:
     sp.run(["dvc", "pull", config["data"]["test_dvc"]], check=True)
 
     test_dataset = torchvision.datasets.ImageFolder(
-        os.path.join(config["data"]["train_data_path"]), transform=transformer
+        os.path.join(config["data"]["test_data_path"]), transform=transformer
     )
 
     test_loader = DataLoader(

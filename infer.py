@@ -15,9 +15,15 @@ from CIFAR.trainer import ImageClassifier
 @hydra.main(version_base=None, config_path="./conf", config_name="config")
 def main(config: DictConfig) -> None:
 
+    ckpt_name = config["model"]["ckpt"]
+    models_path = config["model"]["model_path"]
+
+    # pull model from dvc local storage
+    sp.run(["dvc", "pull", f"{models_path}/{ckpt_name}.dvc"], check=True)
+
     base_model = BasicBlockNet()
     model = ImageClassifier.load_from_checkpoint(
-        ckpt_path=f"{config['model']['model_path']}/{config['model']['ckpt']}",
+        checkpoint_path=f"{models_path}/{ckpt_name}",
         model=base_model,
         lr=config["training"]["lr"],
     )
@@ -33,9 +39,9 @@ def main(config: DictConfig) -> None:
     )
 
     # pull data from dvc local storage
-    sp.run(["dvc", "pull", config["data_loading"]["infer_dvc"]], check=True)
+    sp.run(["dvc", "pull", config["data"]["infer_dvc"]], check=True)
 
-    inference_path = config["data_loading"]["infer_data_path"]
+    inference_path = config["data"]["infer_data_path"]
 
     for filename in os.listdir(inference_path):
         img_path = os.path.join(inference_path, filename)
@@ -55,8 +61,8 @@ def main(config: DictConfig) -> None:
             print(f"Image: {filename},Class: {class_text}")
 
     # delete folder with train dataset
-    if os.path.exists(config["data_loading"]["infer_data_path"]):
-        shutil.rmtree(config["data_loading"]["infer_data_path"])
+    if os.path.exists(config["data"]["infer_data_path"]):
+        shutil.rmtree(config["data"]["infer_data_path"])
 
 
 if __name__ == "__main__":
